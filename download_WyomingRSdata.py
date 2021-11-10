@@ -11,7 +11,7 @@ from netCDF4 import Dataset
 import time
 import numpy as np
 
-output_dir = "/Users/martina/Strateole2/FLOATS/Radiosondes/"   #path where the ouput netcdf file is saved
+output_dir = "***"   #path where the ouput netcdf file is saved
 
 # choose the date for which you want to download the radiosonde data
 year = '2021' 
