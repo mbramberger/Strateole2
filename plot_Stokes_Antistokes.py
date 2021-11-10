@@ -14,7 +14,7 @@ from matplotlib.widgets import Slider, Button
 
 
   
-FLOATS_csv_dir = "/Users/martina/Strateole2/FLOATS/FLOATS_C1_52/" # dir where where masterfile is
+FLOATS_csv_dir = "****/FLOATS/FLOATS_C1_52/" # dir where where masterfile is
 csv_file = FLOATS_csv_dir+'FLOATS_Raman_Master.csv' 
 
 #  read data 
