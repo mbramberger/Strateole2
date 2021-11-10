@@ -28,9 +28,9 @@ from os.path import exists
 #from EFU_HKfileprocessor import *
 
 #File names and directories
-default_local_target_dir="/Users/martina/Strateole2/FLOATS/CCMZ_Mirror/" # directory where to store mirrored data on your local machine
-FLOATS_csv_dir = "/Users/martina/Strateole2/FLOATS/FLOATS_C1_52/" # dir where to put processesed csv files 
-FLOATS_MCB_csv_dir = "/Users/martina/Strateole2/FLOATS/FLOATS_C1_52/MCB/"  # dir where to put processesed MCB csv files 
+default_local_target_dir="****/FLOATS/CCMZ_Mirror/" # directory where to store mirrored data on your local machine
+FLOATS_csv_dir = "*****/FLOATS/FLOATS_C1_52/" # dir where to put processesed csv files 
+FLOATS_MCB_csv_dir = "*****/FLOATS/FLOATS_C1_52/MCB/"  # dir where to put processesed MCB csv files 
 Tempfile_dir = FLOATS_csv_dir+"/Recent_Download/"
 singlescan_dir = FLOATS_csv_dir+"Single_FTR/"
 FLOATS_log_file = FLOATS_csv_dir+"FLOATS_Log.txt" #file to save log of XML messages
@@ -43,8 +43,8 @@ gzfiles = sorted(os.listdir(default_local_target_dir))
 
 #CCMz parameters
 ccmz_url="sshstr2.ipsl.polytechnique.fr" # CCMz URL from where to download data
-ccmz_user="mbramberger" # Your login on the CCMz
-ccmz_pass="b%Tg~H42" # Your password on the CCMz
+ccmz_user="*****" # Your login on the CCMz
+ccmz_pass="****" # Your password on the CCMz
 
 # ID of flights in which I'm interested in
 my_flights=['ST2_C1_06_TTL5']#,'ST2_C0_05_TTL2'] # Adapt according to your needs
