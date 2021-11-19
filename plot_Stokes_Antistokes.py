@@ -28,21 +28,7 @@ for i in range(n_profs):
 res = vals[:,2]   #spatial resolution
 stokes = vals[:,9:9+1850]
 antistokes = vals[:,1859:3709]
-
-
-# get time of different profiles
 timestamp = vals[:,0]
-year = np.empty(n_profs)
-month = np.empty(n_profs)
-day = np.empty(n_profs)
-dates = [''] * n_profs
-for ip in range(n_profs): 
-    dt_time = datetime.fromtimestamp(timestamp[ip])
-    year[ip] = dt_time.year
-    month[ip] = dt_time.month
-    day[ip] = dt_time.day
-    dates[ip] = dt_time.strftime("%m/%d/%Y")
-  
 
 # distance along line
 dist = np.arange(0,len(stokes[0,:]))
@@ -57,11 +43,12 @@ line1, = plt.plot(dist,antistokes[0,:],'-r*', markersize=2, markeredgewidth=0, c
 ax1.set_xlabel('Distance from Laser [m]')
 ax1.set_ylabel('Raman Signal')
 ax1.legend()
-# annotation = 'Date: ' + sel_date
-# text = ax1.text(0.6,0.7,annotation, transform=ax1.transAxes)
+
 date_time = datetime.fromtimestamp(timestamp[0])
-d = date_time.strftime("%m/%d/%Y, %H:%M:%S")
-ax1.set_title("Raman Signal at: "+d)
+d = date_time.strftime("%m/%d/%Y, %H:%M:%S")  #local time on computer
+utc_time = datetime.utcfromtimestamp(timestamp[0])
+d_utc = utc_time.strftime("%m/%d/%Y, %H:%M:%S") # UTC time
+ax1.set_title("Raman Signal at: "+d_utc)
 axcolor = 'lightgoldenrodyellow'
 ax1.margins(x=0)
 
@@ -85,8 +72,10 @@ def update(val):
     # annotation = 'Date: ' + sel_date
     # text.set_text(annotation)
     date_time = datetime.fromtimestamp(timestamp[int(szd_slider.val)])
-    d = date_time.strftime("%m/%d/%Y, %H:%M:%S")
-    ax1.set_title("Raman Signal at: "+d)
+    d = date_time.strftime("%m/%d/%Y, %H:%M:%S") #local time on computer
+    utc_time = datetime.utcfromtimestamp(timestamp[int(szd_slider.val)])
+    d_utc = utc_time.strftime("%m/%d/%Y, %H:%M:%S") # UTC time
+    ax1.set_title("Raman Signal at: "+d_utc)
     line.set_ydata(stokes[int(szd_slider.val),:])
     line1.set_ydata(antistokes[int(szd_slider.val),:])
     fig1.canvas.draw_idle()
