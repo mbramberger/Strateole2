@@ -27,7 +27,7 @@ for i in range(n_profs):
 
 res = vals[:,2]   #spatial resolution
 stokes = vals[:,9:9+1850]
-antistokes = vals[:,1859:3709]
+antistokes = vals[:,1859:]
 timestamp = vals[:,0]
 
 # distance along line
